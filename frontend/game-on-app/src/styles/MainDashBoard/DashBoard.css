@@ -1,0 +1,447 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+
+.NavigationBar{
+
+
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  margin-top: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box; 
+}
+
+
+
+.NavigationBar img{
+  height: 80%;
+  max-height: 100%;
+  object-fit: contain;
+  width: 100px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.NavigationBar a{
+  color: white;
+  padding-right: 10px;
+
+}
+
+
+
+.SideMenu {
+  width: 250px; 
+   max-height: 100%; 
+  background-color: black; 
+  display: flex; 
+  flex-direction: column; 
+  
+
+}
+
+.SideMenu a{
+  display: block;
+}
+
+.SideMenu li :hover{
+  background-color: white;
+}
+
+.sidebar {
+  width: 200px; 
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  box-sizing: border-box; 
+  min-height: 100vh;
+  height: auto; 
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: white;
+  color: black;
+}
+
+
+/*.SideMenu a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+  padding-right: 100px;
+}
+.SideMenu li{
+  padding: 0px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}*/
+
+/*.SideMenu a{
+  display: block;
+}
+
+.SideMenu li :hover{
+  background-color: white;
+
+  text-decoration: underline;
+  color: black;
+
+}*/
+
+.MainContent{
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 20px; 
+  padding: 20px; 
+  background-color: #f8f9fa; 
+  min-width: 90%;
+  cursor: pointer;
+}
+
+.event
+{
+  background-color: #f3f4f6;
+  width: 90%; 
+  padding: 20px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  position: relative;
+}
+
+.event img{
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+  height: 35px;
+  width: 35px;
+
+
+}
+
+.createButton{
+  width: 200px;
+  height: 70px;
+  color: white;
+  background-color: black;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+
+.content{
+  display: flex;
+  flex-direction: row;
+}
+
+.MainContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.event:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.eventform {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eventform input,
+.eventform select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+.modal-overlay {
+ 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(5px); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  width: 70%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+  button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .close-btnone {
+    position: absolute;
+    top: 100px;
+    right: -5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ff4c4c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .close-btn:hover {
+    background-color: #ff2b2b;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  /*button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }*/
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+.form-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+/* Styles for the form */
+.form-content {
+  background-color: #fff; /* White background for the form */
+  padding: 20px 30px; /* Add padding for inner spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  width: 100%;
+  max-width: 400px; /* Form size should be human-readable */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between elements */
+  overflow-y: scroll;
+
+}
+
+/* Form labels */
+.form-content label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333; /* Darker text for readability */
+}
+
+/* Form inputs */
+.form-content input,
+.form-content select {
+  width: 100%; /* Take full width */
+  padding: 8px 10px; /* Spacing inside the inputs */
+  font-size: 14px; /* Readable font size */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded edges for inputs */
+  box-sizing: border-box;
+}
+
+/* Input focus styles */
+.form-content input:focus,
+.form-content select:focus {
+  border-color: #007bff; /* Highlighted border */
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Soft blue glow */
+}
+
+/* Dropdown select */
+.dropdown-select {
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+/* Submit button */
+.form-content input[type="submit"] {
+  background-color: #28a745; /* Green background */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px; /* Readable text size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Submit button hover */
+.form-content input[type="submit"]:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .form-content {
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
+
+  .form-content input,
+  .form-content select {
+    font-size: 12px; /* Adjust font size for small screens */
+  }
+
+  .form-content input[type="submit"] {
+    font-size: 14px;
+  }
+}
+
+
+.profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  right: 30px;
+  
+}
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Style the form container */
+  .form-content {
+    max-width: 600px;           /* Maximum width */
+    width: 100%;                /* Ensure it takes full width up to max */
+    margin: 50px auto;          /* Center horizontally */
+    padding: 20px;              /* Add some padding */
+    border: 1px solid #ddd;    /* Border around the form */
+    border-radius: 8px;        /* Rounded corners */
+    background-color: #fff;    /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-height: 700px;        /* Ensure the form has a minimum height */
+  }
+  
+  /* Style the labels */
+  .form-content label {
+    display: block;             /* Make labels block level */
+    font-size: 16px;            /* Set font size */
+    margin: 10px 0 5px;         /* Add spacing before and after labels */
+    color: #333;                /* Dark text color */
+  }
+  
+  /* Style the input fields */
+  .form-content input[type="text"],
+  .form-content input[type="number"],
+  .form-content select,
+  .form-content input[type="file"] {
+    width: 100%;                /* Make inputs take full width */
+    padding: 10px;              /* Add padding inside inputs */
+    margin-bottom: 15px;        /* Add space between fields */
+    border: 1px solid #ccc;     /* Border color */
+    border-radius: 4px;         /* Rounded corners for inputs */
+    font-size: 14px;            /* Font size for input text */
+  }
+  
+  /* Style for the submit button */
+  .form-content input[type="submit"] {
+    background-color: #4CAF50;  /* Green background for the submit button */
+    color: white;               /* White text color */
+    padding: 10px 20px;         /* Padding around the button */
+    border: none;               /* Remove border */
+    border-radius: 4px;         /* Rounded corners */
+    font-size: 16px;            /* Button font size */
+    cursor: pointer;           /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+  }
+  
+  .form-content input[type="submit"]:hover {
+    background-color: #45a049;  /* Darken the button color on hover */
+  }
+  
+  /* Style for select dropdown */
+  .form-content .dropdown-select {
+    width: 100%;                /* Make the select box take full width */
+    padding: 10px;              /* Add padding inside the select box */
+    margin-bottom: 15px;        /* Space between select box and next input */
+    border: 1px solid #ccc;     /* Border color */
+    border-radius: 4px;         /* Rounded corners */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .form-content {
+      padding: 15px;            /* Less padding on small screens */
+      margin: 20px;             /* Less margin on small screens */
+    }
+  }
+  
+
+  .slotsgenerate{
+    text-align: center;
+  }

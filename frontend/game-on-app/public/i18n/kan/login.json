@@ -1,0 +1,9 @@
+{
+    "label.login": "ಪ್ರವೇಶಿಸಿ",
+    "login.email": "ಇಮೇಲ್",
+    "login.password": "ಗುಪ್ತಪದ",
+    "login.accountNotExists": "ಖಾತೆ ಇಲ್ಲದಿದ್ದರೆ ",
+    "login.signUp": "ನೊಂದಾಯಿಸಿ",
+    "label.logout": "ನಿರ್ಗಮಿಸಿ",
+    "label.gameOn": "ಆಟ ಪ್ರಾರಂಭಿಸಿ"
+}

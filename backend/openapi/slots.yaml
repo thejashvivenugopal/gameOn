@@ -1,0 +1,132 @@
+openapi: 3.1.0
+info:
+  title: Slots Management API
+  description: API for managing slots and their association with events
+  version: '1.0'
+servers:
+  - url: http://localhost:3002
+    description: Local development environment
+
+paths:
+  /slots/availability:
+    get:
+      operationId: fetchAvailableOrUnavailableSlots
+      summary: Fetch slots by availability
+      description: Retrieve slots based on their availability status
+      parameters:
+        - name: available
+          in: header
+          required: true
+          schema:
+            type: string
+            enum: [true, false]
+            description: Availability status of slots (true for available, false for unavailable)
+      responses:
+        200:
+          description: Slots fetched successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Slot'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /slots/by-event:
+    get:
+      operationId: fetchAvailableSlotsByEvents
+      summary: Fetch available slots by event ID
+      description: Retrieve available slots associated with a specific event
+      parameters:
+        - name: available
+          in: header
+          required: true
+          schema:
+            type: string
+            enum: [true, false]
+            description: Availability status of slots
+        - name: eventid
+          in: header
+          required: true
+          schema:
+            type: string
+            description: ID of the event
+      responses:
+        200:
+          description: Slots fetched successfully by event ID
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Slot'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /slots/create:
+    post:
+      operationId: createSlots
+      summary: Create slots for an event
+      description: Generate slots associated with a specific event
+      parameters:
+        - name: eventid
+          in: header
+          required: true
+          schema:
+            type: string
+            description: ID of the event
+      responses:
+        201:
+          description: Slots created successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Slot'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Slot:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the slot
+        availability:
+          type: boolean
+          description: Whether the slot is available or not
+        eventId:
+          type: string
+          description: ID of the associated event
+        startTime:
+          type: string
+          format: date-time
+          description: Start time of the slot
+        endTime:
+          type: string
+          format: date-time
+          description: End time of the slot
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string

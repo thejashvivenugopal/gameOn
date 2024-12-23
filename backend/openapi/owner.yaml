@@ -1,0 +1,192 @@
+openapi: 3.1.0
+info:
+  title: Owner Management API
+  description: REST APIs for managing owner data
+  version: '1.0'
+servers:
+  - url: http://localhost:3002
+    description: Local development environment
+
+paths:
+  /owners:
+    post:
+      operationId: createOwner
+      summary: Create a new owner
+      description: Add a new owner to the database
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Owner'
+      responses:
+        201:
+          description: Owner created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Owner'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    get:
+      operationId: getAllOwners
+      summary: Retrieve all owners
+      description: Fetch a list of all owners
+      responses:
+        200:
+          description: List of owners retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Owner'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /owners/{id}:
+    get:
+      operationId: getOwnerById
+      summary: Retrieve a specific owner by ID
+      description: Fetch details of an owner using their unique identifier
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Owner retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Owner'
+        404:
+          description: Owner not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      operationId: updateOwner
+      summary: Update an existing owner by ID
+      description: Update owner details using their ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Owner'
+      responses:
+        200:
+          description: Owner updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Owner'
+        404:
+          description: Owner not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      operationId: deleteOwner
+      summary: Delete an owner by ID
+      description: Remove an owner from the database using their ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Owner deleted successfully
+        404:
+          description: Owner not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Owner:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the owner
+        name:
+          type: string
+          description: Name of the owner
+        email:
+          type: string
+          format: email
+          description: Email address of the owner
+        phone:
+          type: string
+          description: Phone number of the owner
+        address:
+          $ref: '#/components/schemas/Address'
+
+    Address:
+      type: object
+      properties:
+        street:
+          type: string
+          description: Street address
+        city:
+          type: string
+          description: City of the address
+        state:
+          type: string
+          description: State of the address
+        zipCode:
+          type: string
+          description: Zip code of the address
+        country:
+          type: string
+          description: Country of the address
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string

@@ -1,0 +1,95 @@
+.loginPage{
+    display: flex;
+    /* background-color: red; */
+    height: 100vh;
+    font-family: 'Dancing Script', cursive;
+}
+
+.lang{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.lang button{
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+
+.lang button:hover {
+    background-color: grey;
+}
+
+.left{
+    display: flex;
+    background-color: grey;
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    flex-direction: column;
+    color: white;
+    font-size: 45px;
+    font-weight: normal;
+}
+
+.right{
+    display: flex;
+    border-radius: 0.5rem;
+    background-color: white(0,0,0,1);
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    color: grey;
+}
+
+.right a {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.right a:hover {
+    color: red;
+}
+
+.loginCredentials{
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    border-radius: 0.5rem;
+    width: 250px;
+    height: 40px;
+    font-family: 'Dancing Script', cursive;
+    /* font-size: 20px; */
+    font-weight: normal;
+}
+
+input[type="submit"] {
+    margin: 3.5px;
+}
+
+input[type="submit"]:hover {
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+}
+
+.signIn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+
+.forgotPasswordLink {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+

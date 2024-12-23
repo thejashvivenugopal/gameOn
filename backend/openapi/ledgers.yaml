@@ -1,0 +1,183 @@
+openapi: 3.1.0
+info:
+  title: Ledger Management API
+  description: API for managing ledger entries, including creating, retrieving, updating, and deleting ledger data.
+  version: '1.0'
+servers:
+  - url: http://localhost:3000
+    description: Local development environment
+
+paths:
+  /ledger:
+    post:
+      operationId: postLedger
+      summary: Create a new ledger entry
+      description: Create a new ledger entry with provided data.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: Ledger data.
+      responses:
+        200:
+          description: Successfully created a ledger entry
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Success message.
+        400:
+          description: Invalid input data
+        404:
+          description: Customer or event not found
+
+  /ledger/viewAll:
+    get:
+      operationId: getAllLedgers
+      summary: Retrieve all ledger entries
+      description: Retrieve all ledger entries.
+      responses:
+        200:
+          description: Successfully retrieved all ledger entries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        404:
+          description: Ledger not found
+
+  /ledger/{id}:
+    put:
+      operationId: updateLedger
+      summary: Update an existing ledger entry by ID
+      description: Update an existing ledger entry using the provided data.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Ledger ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: Updated ledger data.
+      responses:
+        200:
+          description: Successfully updated the ledger entry
+        404:
+          description: Ledger not found
+        400:
+          description: Invalid input data
+
+  /ledger/{id}/view:
+    get:
+      operationId: getLedgerById
+      summary: Retrieve a specific ledger entry by ID
+      description: Retrieve a ledger entry by its unique ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Ledger ID
+      responses:
+        200:
+          description: Successfully retrieved the ledger entry
+        404:
+          description: Ledger not found
+
+  /ledger/{id}/delete:
+    delete:
+      operationId: deleteLedgerById
+      summary: Delete a specific ledger entry by ID
+      description: Delete a ledger entry by its unique ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: Ledger ID
+      responses:
+        200:
+          description: Successfully deleted the ledger entry
+        404:
+          description: Ledger not found
+
+  /ledger/owner/{ownerid}:
+    get:
+      operationId: ledgerByOwnerId
+      summary: Retrieve all ledgers for a specific owner
+      description: Retrieve all ledger entries associated with a specific owner ID.
+      parameters:
+        - in: path
+          name: ownerid
+          required: true
+          schema:
+            type: string
+          description: Owner ID
+      responses:
+        200:
+          description: Successfully retrieved ledgers for the owner
+        400:
+          description: Missing or invalid OwnerId
+        404:
+          description: No ledgers found for this owner
+
+  /ledger/customers/owner/{ownerid}:
+    get:
+      operationId: customersByOwnerId
+      summary: Retrieve all customers for a specific owner
+      description: Retrieve all customers associated with a specific owner ID.
+      parameters:
+        - in: path
+          name: ownerid
+          required: true
+          schema:
+            type: string
+          description: Owner ID
+      responses:
+        200:
+          description: Successfully retrieved customers for the owner
+        400:
+          description: Missing or invalid OwnerId
+        404:
+          description: No customers found for this owner
+
+  /ledger/events/owner/{ownerid}:
+    get:
+      operationId: eventsByOwnerId
+      summary: Retrieve all events for a specific owner
+      description: Retrieve all events associated with a specific owner ID.
+      parameters:
+        - in: path
+          name: ownerid
+          required: true
+          schema:
+            type: string
+          description: Owner ID
+      responses:
+        200:
+          description: Successfully retrieved events for the owner
+        400:
+          description: Missing or invalid OwnerId
+        404:
+          description: No events found for this owner

@@ -1,0 +1,44 @@
+openapi: 3.1.0
+info:
+  title: User Stats API
+  description: API for retrieving user statistics (ledger).
+  version: '1.0'
+servers:
+  - url: http://localhost:3002
+    description: Local development environment
+
+paths:
+  /user-stats:
+    get:
+      operationId: getUserStats
+      summary: Retrieve user stats (ledger)
+      description: Fetch the ledger for user stats.
+      responses:
+        200:
+          description: Successfully retrieved user stats
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ledger:
+                    type: object
+                    description: The ledger containing user statistics
+        404:
+          description: Ledger not found
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string

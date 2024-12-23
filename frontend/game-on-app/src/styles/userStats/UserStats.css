@@ -1,0 +1,40 @@
+/* Main container */
+.dashboard-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Title styling */
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Charts container styling */
+.charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Individual chart card styling */
+.chart-card {
+  width: 45%;
+  min-width: 300px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Chart title */
+.chart-title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #555;
+}

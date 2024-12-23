@@ -1,0 +1,147 @@
+
+
+.profile {
+    width: 100vh;
+    /* background: #0e101c; */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+  }
+  
+  .profile form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .profile h1 {
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(79, 98, 148);
+  }
+  
+  .profile form {
+    /* background: #0e101c; */
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .profile p {
+    color: #bf1650;
+  }
+  .profile  .profileEditButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile  .profileEditButton button:hover{
+    cursor: pointer;
+    background-color: gray;
+  }
+  
+  .profile p::before {
+    display: inline;
+    content: "⚠ ";
+  }
+  
+  .profile  input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid white;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .profile label {
+    line-height: 2;
+    text-align: left;
+    display: block;
+    margin-bottom: 13px;
+    margin-top: 20px;
+    color: black;
+    font-size: 14px;
+    font-weight: 200;
+  }
+  
+  .profile button[type="submit"],
+  .profile input[type="submit"],
+  .profile button[type="reset"] {
+    background: #ec5990;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 10px;
+    /* width: 100VH; */
+    cursor: pointer;
+  }
+  
+  .profile button[type="submit"]:hover,
+  .profile input[type="submit"]:hover {
+    background: #bf1650;
+  }
+  
+  .profile button[type="submit"]:active,
+  .profile input[type="button"]:active,
+  .profile input[type="submit"]:active {
+    transition: 0.3s all;
+    transform: translateY(3px);
+    border: 1px solid transparent;
+    opacity: 0.8;
+  }
+  
+  .profile input:disabled,
+  .profile button[type="submit"]:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  
+  .profile  input[type="button"]:hover {
+    transition: 0.3s all;
+  }
+  
+  .profile button[type="submit"],
+  .profile input[type="button"],
+  .profile input[type="submit"] {
+    -webkit-appearance: none;
+  }
+  
+  .profile  .App {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .profile button[type="button"] {
+    display: block;
+    appearance: none;
+    background: #333;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+  
+  .profile  hr {
+    margin-top: 30px;
+  }
+  
+  .profile button {
+    display: block;
+    appearance: none;
+    margin-top: 40px;
+    border: 1px solid #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+  

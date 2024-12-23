@@ -1,0 +1,10 @@
+{
+    "label.firstName": "First Name",
+    "label.lastName": "Last Name",
+    "label.emailId": "Email-id",
+    "label.bankCode": "First Name",
+    "label.mobileNumber": "Mobile Number",
+    "label.update": "UPDATE",
+    "label.edit": "EDIT",
+    "label.accountNo": "Account Number"
+}

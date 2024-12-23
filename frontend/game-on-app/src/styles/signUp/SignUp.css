@@ -1,0 +1,86 @@
+/* sign-up form Container Styling */
+.signUp-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgb(219, 214, 214);
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.signUp-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.signUp-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+
+/* Styling for the form layout */
+.signUp-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.form-section {
+    flex: 1;
+    min-width: 350px;
+    margin: 10px;
+}
+
+/* Styling for form group class */
+.form-group {
+    margin-bottom: 25px;
+}
+
+/* Styling for label in form group class */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Styling for input in form group class */
+.form-group input {
+    width: 90%;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    height: 35px; 
+}
+
+/* Footer section of the form */
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+
+/* Styling for the submit button */
+.signUp-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Styling for the submit button on hover */
+.signUp-button:hover {
+    background: #0056b3;
+}
+
+

@@ -1,0 +1,201 @@
+openapi: 3.1.0
+info:
+  title: Event Management API
+  description: REST APIs for managing event data
+  version: '1.0'
+servers:
+  - url: http://localhost:3002
+    description: Local development environment
+
+paths:
+  /events:
+    get:
+      operationId: getEvents
+      summary: Retrieve all events
+      description: Fetch a list of all events
+      responses:
+        200:
+          description: List of events retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      operationId: createEvent
+      summary: Create a new event
+      description: Add a new event to the database
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        201:
+          description: Event created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+        400:
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /events/{id}:
+    get:
+      operationId: getEventById
+      summary: Retrieve a specific event by id
+      description: Fetch details of an event using its unique identifier
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Event retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+        404:
+          description: Event not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    put:
+      operationId: updateEvent
+      summary: Update an existing event by id
+      description: Update event details using its id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        200:
+          description: Event updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+        404:
+          description: Event not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    delete:
+      operationId: deleteEvent
+      summary: Delete an event by id
+      description: Remove an event from the database using its id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        204:
+          description: Event deleted successfully
+        404:
+          description: Event not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Event:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the event
+        eventType:
+          type: string
+          description: Type of the event (e.g:Cricket,Football)
+        eventStartTime:
+          type: string
+          format: time
+        eventEndTime:
+          type: string
+          format: time
+        amountPerHour:
+          type: number
+          format: double
+          description: Cost per hour for the event
+        owner:
+          $ref: '#/components/schemas/Owner'
+        location:
+          $ref: '#/components/schemas/Location'
+        commonFields:
+          $ref: '#/components/schemas/CommonFields'
+
+    Owner:
+      type: object
+      properties:
+        ownerId:
+          type: string
+        ownerName:
+          type: string
+
+    Location:
+      type: object
+      properties:
+        zipCode:
+          type: integer
+        country:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        addressLineOne:
+          type: string
+        addressLineTwo:
+          type: string
+
+    CommonFields:
+      type: object
+      properties:
+        createdDate:
+          type: string
+          format: date-time
+        modifiedDate:
+          type: string
+          format: date-time
+        createdBy:
+          type: string
+        modifiedBy:
+          type: string
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string

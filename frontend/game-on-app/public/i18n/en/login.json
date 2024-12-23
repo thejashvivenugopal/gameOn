@@ -1,0 +1,9 @@
+{
+    "label.login": "LOG IN",
+    "login.email": "Email",
+    "login.password": "Password",
+    "login.accountNotExists": "If account does exist",
+    "login.signUp": "SIGN UP",
+    "label.logout": "LOGOUT",
+    "label.gameOn": "GAME ON"
+}

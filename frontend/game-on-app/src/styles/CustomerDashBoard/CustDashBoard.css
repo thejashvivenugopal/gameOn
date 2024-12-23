@@ -1,0 +1,616 @@
+button {
+  all: unset; /* Resets all styles */
+  background-color: transparent; /* Clears default background */
+  cursor: pointer; /* Makes it look clickable */
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+
+.NavigationBar{
+
+
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  margin-top: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box; 
+}
+
+
+
+.NavigationBar img{
+  height: 80%;
+  max-height: 100%;
+  object-fit: contain;
+  width: 100px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.NavigationBar a{
+  color: white;
+  padding-right: 10px;
+
+}
+
+
+
+.SideMenu {
+  width: 250px; 
+   max-height: 100%; 
+  background-color: black; 
+  display: flex; 
+  flex-direction: column; 
+  
+
+}
+
+.SideMenu a{
+  display: block;
+}
+
+.SideMenu li :hover{
+  background-color: white;
+}
+
+.sidebar {
+  width: 200px; 
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  box-sizing: border-box; 
+  min-height: 100vh;
+  height: auto; 
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: white;
+  color: black;
+}
+
+
+/*.SideMenu a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+  padding-right: 100px;
+}
+.SideMenu li{
+  padding: 0px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}*/
+
+/*.SideMenu a{
+  display: block;
+}
+
+.SideMenu li :hover{
+  background-color: white;
+
+  text-decoration: underline;
+  color: black;
+
+}*/
+
+.MainContent{
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 20px; 
+  padding: 20px; 
+  background-color: #f8f9fa; 
+  min-width: 90%;
+  cursor: pointer;
+}
+
+.event
+{
+  background-color: #f3f4f6;
+  width: 90%; 
+  padding: 20px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  position: relative;
+}
+
+.event img{
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+  height: 35px;
+  width: 35px;
+
+
+}
+
+.createButton{
+  width: 200px;
+  height: 70px;
+  color: white;
+  background-color: black;
+  border-radius: 0.5rem;
+}
+
+
+.content{
+  display: flex;
+  flex-direction: row;
+}
+
+.MainContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.event:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.eventform {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eventform input,
+.eventform select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+.modal-overlay {
+ 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(5px); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  width: 50%;
+  height: 500px;
+  max-height: 80%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+button[type="submit"] {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #ff4c4c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+  background-color: #ff2b2b;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/*button[type="submit"] {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}*/
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* .form-overlay {
+ 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  background-color: rgba(206, 81, 81, 0.5); 
+  backdrop-filter: blur(5px); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.form-content {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  width: 60%;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  overflow-y: auto;
+} */
+
+.modal-content button, 
+.modal-content input {
+  width: 95%;
+  height: auto;
+  max-width: 100%; 
+  word-wrap: break-word; 
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px; /* Prevent content from hitting screen edges */
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow: auto;
+}
+
+.modal-content h2 {
+  margin: 0;
+  font-size: 24px;
+  text-align: center;
+  color: #333;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.modal-content label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+.modal-content input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modal-content button {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #28a745; /* Green color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-content button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.modal-content button:active {
+  background-color: #155724; /* Darker green when clicked */
+}
+
+.modal-content .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+}
+
+
+.modal-slot-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  justify-content: space-between !important;
+}
+
+.modal-slot-container button {
+  background-color: #28a745 !important;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  width: calc(33.33% - 10px) !important;
+  box-sizing: border-box; 
+  text-align: center; 
+}
+
+.modal-slot-container button.clicked {
+  background-color: #dc3545 !important;
+  color: #fff;
+}
+
+.modal-slot-container button:hover {
+  background-color: #218838; /* Slightly darker green */
+}
+
+.booknow{
+  color: black;
+  background-color: black;
+}
+
+.profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-pic {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 60px;
+}
+
+.logout-dropdown {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.logout-dropdown a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+  display: block;
+}
+
+.logout-dropdown a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show dropdown when profile is clicked */
+.profile-container:hover .logout-dropdown {
+  display: block;
+}
+
+
+/* profile
+
+
+
+.user-profile {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Dropdown Container */
+.dropdown-container {
+  position: absolute;
+  top: 60px; /* Adjust based on your profile pic size */
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: auto;
+  max-width: 100%;
+}
+
+/* Logout Button */
+.logout-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.language-selector {
+  display: flex;
+  flex-direction: column; /* Makes buttons stack vertically */
+  align-items: flex-start; /* Aligns buttons to the start (left) */
+  gap: 10px; /* Adds space between buttons */
+}
+
+.language-selector button {
+  background: #f0f0f0;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 70%; /* Optional: makes all buttons the same width */
+  font-size: small;
+}
+
+.language-selector button:hover {
+  background: #ddd;
+}
+
+.logout{
+  /* background-color: black; */
+  height: 10px;
+  text-decoration: none;
+}
+
+.logout a{
+  color:  black;
+  background-color: none;
+}
+
+.booknow{
+  background-color: green !important;
+  text-align: center;
+}
+
+.booknowcust {
+  background-color: #28a745;
+  font-size: 18px;
+  font-weight: bold; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: all 0.3s ease; 
+  margin-top: 10px;
+}
+
+/* Hover effect */
+.booknowcust:hover {
+  background-color: #218838; 
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Active state */
+.booknowcust:active {
+  background-color: #1e7e34; 
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); 
+  transform: scale(0.98); 
+}
+
+.location{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.close-btnone {
+  position: absolute;
+  top: 100px;
+  right: -5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #ff4c4c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}

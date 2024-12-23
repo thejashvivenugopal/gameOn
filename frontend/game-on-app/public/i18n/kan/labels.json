@@ -1,0 +1,10 @@
+{
+    "label.firstName": "ಮೊದಲ ಹೆಸರು",
+    "label.lastName": "ಕೊನೆಯ ಹೆಸರು",
+    "label.emailId": "ಇಮೇಲ್ ಐಡಿ",
+    "label.bankCode": "ಬ್ಯಾಂಕ್ ಕೋಡ್",
+    "label.mobileNumber": "ಮೊಬೈಲ್ ನಂಬರ್",
+    "label.update": "ನವೀಕರಿಸು",
+    "label.edit": "ತಿದ್ದುಪಡಿ",
+    "label.accountNo": "ಖಾತೆ ಸಂಖ್ಯೆ"
+}

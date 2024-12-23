@@ -1,0 +1,10 @@
+{
+    "owner.aside.events": "Events",
+    "owner.aside.profile": "Profile",
+    "owner.aside.customers": "Settings",
+    "owner.aside.stats": "User Stats",
+    "owner.aside.transactions": "Transactions",
+    "owner.aside.cart": "CART",
+    "owner.button.create": "CREATE",
+    "customer.aside.transactions": "Booked Events"
+}

@@ -1,0 +1,80 @@
+openapi: 3.1.0
+info:
+  title: Cart Management API
+  description: REST APIs for managing cart data
+  version: '1.0'
+servers:
+  - url: http://localhost:3002
+    description: Local development environment
+
+paths:
+  /cart:
+    get:
+      operationId: cartByCustomerId
+      summary: Retrieve cart items by customer ID
+      description: Fetch the cart details of a specific customer using their customer ID
+      parameters:
+        - name: customerid
+          in: header
+          required: true
+          schema:
+            type: string
+          description: The unique identifier of the customer
+      responses:
+        200:
+          description: Cart items retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CartItem'
+        400:
+          description: customerId is required
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        404:
+          description: Cart items not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    CartItem:
+      type: object
+      properties:
+        itemId:
+          type: string
+          description: Unique identifier for the cart item
+        itemName:
+          type: string
+          description: Name of the item
+        quantity:
+          type: integer
+          description: Quantity of the item
+        price:
+          type: number
+          format: double
+          description: Price of the item
+        totalPrice:
+          type: number
+          format: double
+          description: Total price for the quantity of this item
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string

@@ -1,0 +1,68 @@
+openapi: 3.1.0
+info:
+  title: Response Handler API
+  description: API for handling success and error responses.
+  version: '1.0'
+servers:
+  - url: http://localhost:3002
+    description: Local development environment
+
+paths:
+  /response-handler/success:
+    post:
+      operationId: setSuccess
+      summary: Handle success response
+      description: Set a successful response with the provided data.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: Data to send in the response.
+      responses:
+        200:
+          description: Successfully sent data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    description: The response data sent back to the client.
+
+  /response-handler/error:
+    post:
+      operationId: setError
+      summary: Handle error response
+      description: Set an error response with the provided error message.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                error:
+                  type: string
+                  description: The error message to send in the response.
+                statusCode:
+                  type: integer
+                  description: Optional HTTP status code (default is 500).
+      responses:
+        400:
+          description: Bad request error
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message.
