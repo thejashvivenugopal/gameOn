@@ -70,9 +70,3 @@ Utilizing Domain-Driven Design, the object model captures the complex relationsh
 - Velisetti Geetha Pavan: (velisetti.g@northeastern.edu)
 - Bhima Sai Koushik: (bhima.s@northeastern.edu)
 - Shreyas Shekar: (shekar.sh@northeastern.edu)
-
-- ### Video link
-## demo
-- https://northeastern-my.sharepoint.com/personal/venugopal_t_northeastern_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Fvenugopal%5Ft%5Fnortheastern%5Fedu%2FDocuments%2FRecordings%2FMeeting%20in%20GameOn%28webd%29%2D20241208%5F005312%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E0e7479cb%2D1baf%2D40bf%2D9726%2D0ce583ef219e&ga=1
-## ppt
-- https://northeastern-my.sharepoint.com/personal/venugopal_t_northeastern_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Fvenugopal%5Ft%5Fnortheastern%5Fedu%2FDocuments%2FRecordings%2FMeeting%20in%20GameOn%28webd%29%2D20241208%5F010349%2DMeeting%20Recording%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ead874c2a%2Dcac7%2D4df7%2D8bcd%2D46f0651f1bbb&ga=1
