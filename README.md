@@ -66,7 +66,7 @@ Utilizing Domain-Driven Design, the object model captures the complex relationsh
 - *Comprehensive Checks*: npm run test-all
 
 ### Team
-- Thejashvi Venugopal: (venugopal.t@northeastern.edu)
-- Velisetti Geetha Pavan: (velisetti.g@northeastern.edu)
-- Bhima Sai Koushik: (bhima.s@northeastern.edu)
-- Shreyas Shekar: (shekar.sh@northeastern.edu)
+- Thejashvi Venugopal
+- Velisetti Geetha Pavan
+- Bhima Sai Koushik
+- Shreyas Shekar
